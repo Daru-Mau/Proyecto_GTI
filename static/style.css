@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,38 +19,38 @@ body{
   width: 30%;
 }
 
-.prev-page-btn{
+.prev-page-btn {
   box-sizing: border-box;
-  width: 20%;
-  height: 20%;
-  background: #FFFFFF;
-  border: 2px solid #3278FF;
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border: 2px solid #3278ff;
 }
 
-.prev-page-btn:hover{
+.prev-page-btn:hover {
   background: #8446f2;
   cursor: pointer;
 }
 
-.prev-page-btn:active{
+.prev-page-btn:active {
   background: #5061ec;
   cursor: progress;
 }
 
-.next-page-btn{
+.next-page-btn {
   box-sizing: border-box;
-  width: 20%;
-  height: 20%;
-  background: #FFFFFF;
-  border: 2px solid #3278FF;
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border: 2px solid #3278ff;
 }
 
-.next-page-btn:hover{
+.next-page-btn:hover {
   background: #8446f2;
   cursor: pointer;
 }
 
-.next-page-btn:active{
+.next-page-btn:active {
   background: #5061ec;
   cursor: progress;
 }
@@ -61,8 +61,14 @@ h1 {
 }
 
 table {
-  border-collapse: collapse;
-  margin: 2em auto;
+  table-layout: auto;
+  width: auto;
+}
+
+td,
+th {
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 thead {
@@ -76,6 +82,11 @@ th {
 }
 
 tbody tr:nth-child(even) {
+  background-color: #333;
+  max-height: 50px; /* máximo 50px de altura */
+  height: auto; /* altura en función del contenido */
+  line-height: 1.5; /* altura de línea */
+  overflow: hidden; /* ocultar cualquier contenido que se desborde */
   background-color: #333;
 }
 
@@ -100,7 +111,7 @@ td:last-child {
   text-align: center;
 }
 
-.Table-container{
+.Table-container {
   width: 85%;
   height: 50%;
   overflow: auto;
@@ -114,7 +125,7 @@ td:last-child {
 }
 
 .pagination button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
