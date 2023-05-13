@@ -3,23 +3,26 @@
   <head>
     <title>Base de Datos de Videojuegos</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <script type="text/javascript" src="src/app.js"></script>
+    <link rel="icon" href="/static/images/GP Icon logo.png" />
   </head>
   <body>
-    <header>
+    <header class="headerlogo">
       <img src="/static/images/Gamespedia logo full.png" alt="Gamespedia" />
-    </header class ="header_logo">
-    <table id="gameTable">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Desarrollador</th>
-          <th>Género</th>
-          <th>Plataforma</th>
-          <th>Año de Lanzamiento</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    </header>
+    <div class="Table-container">
+      <table id="gameTable">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Desarrollador</th>
+            <th>Género</th>
+            <th>Año de Lanzamiento</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="/static/src/app.js"></script>
   </body>
 </html>

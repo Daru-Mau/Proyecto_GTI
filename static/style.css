@@ -1,15 +1,58 @@
-body {
-  background-color: #1b1b1b;
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
   color: #fff;
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
-.header_logo {
+.headerlogo {
   background-image: url("https://www.transparenttextures.com/patterns/diagonal-noise.png");
   padding: 1em;
   text-align: center;
-  width: 100%;
+  width: 98%;
+}
+.headerlogo img {
+  width: 30%;
+}
+
+.prev-page-btn{
+  box-sizing: border-box;
+  width: 20%;
+  height: 20%;
+  background: #FFFFFF;
+  border: 2px solid #3278FF;
+}
+
+.prev-page-btn:hover{
+  background: #8446f2;
+  cursor: pointer;
+}
+
+.prev-page-btn:active{
+  background: #5061ec;
+  cursor: progress;
+}
+
+.next-page-btn{
+  box-sizing: border-box;
+  width: 20%;
+  height: 20%;
+  background: #FFFFFF;
+  border: 2px solid #3278FF;
+}
+
+.next-page-btn:hover{
+  background: #8446f2;
+  cursor: pointer;
+}
+
+.next-page-btn:active{
+  background: #5061ec;
+  cursor: progress;
 }
 
 h1 {
@@ -24,6 +67,7 @@ table {
 
 thead {
   background-color: #444;
+  width: 100%;
 }
 
 th {
@@ -54,4 +98,31 @@ td:nth-child(4) {
 
 td:last-child {
   text-align: center;
+}
+
+.Table-container{
+  width: 85%;
+  height: 50%;
+  overflow: auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #3e8e41;
 }
