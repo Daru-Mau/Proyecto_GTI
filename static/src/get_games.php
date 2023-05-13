@@ -1,6 +1,6 @@
 <?php
 // Ruta al archivo CSV
-$csv_file = './data/steam_games.csv';
+$csv_file = '../../data/steam_games.csv';
 
 // Abrir el archivo CSV
 $file = fopen($csv_file, 'r');

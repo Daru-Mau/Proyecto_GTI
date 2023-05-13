@@ -2,33 +2,27 @@
 <html>
   <head>
     <title>Base de Datos de Videojuegos</title>
-    <link
-      rel="stylesheet"
-      href="https://github.com/Maruda13/Proyecto_GTI/blob/main/static/style.css"
-    />
-    <script type="text/javascript" src="src/app.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="/static/images/GP Icon logo.png" />
   </head>
   <body>
-    <header>
-      <header>
-        <img
-          src="D:/Documentos/VC_Projects/8vo Semestre/GTI/PF/Proyecto_GTI/static/images/Gamespedia logo full.png"
-          alt="Gamespedia"
-        />
-        <h1>Gamespedia</h1>
-      </header>
+    <header class="headerlogo">
+      <img src="/static/images/Gamespedia logo full.png" alt="Gamespedia" />
     </header>
-    <table id="gameTable">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Desarrollador</th>
-          <th>Género</th>
-          <th>Plataforma</th>
-          <th>Año de Lanzamiento</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="Table-container">
+      <table id="gameTable">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Desarrollador</th>
+            <th>Género</th>
+            <th>Año de Lanzamiento</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="/static/src/app.js"></script>
   </body>
 </html>

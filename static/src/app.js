@@ -1,44 +1,74 @@
-// Obtener el elemento de tabla HTML
-const tabla = document.querySelector("table tbody");
+// Obtener el csv
+var csv_url = "../../data/steam_games.csv"
 
-// Obtener los datos del archivo CSV
-fetch("./data/steam_games.csv")
-  .then((response) => response.text())
-  .then((data) => {
-    // Convertir los datos CSV en un array de objetos
-    const juegos = parseCSV(data);
+fetch(csv_url)
+  .then(response => response.text())
+  .then(data => {
+    const tabla = document.querySelector('#gameTable tbody');
+    const rows = data.split('\n').slice(1); // Eliminar encabezados y dividir en filas
+    const totalPages = Math.ceil(rows.length / 5); // Calcular el número total de páginas
+    let currentPage = 1; // Página actual
+    let startIndex = 0; // Índice de inicio de la página actual
 
-    // Generar las filas de la tabla a partir de los datos
-    juegos.forEach((juego) => {
-      const fila = document.createElement("tr");
-      fila.innerHTML = `
-        <td>${juego.titulo}</td>
-        <td>${juego.desarrollador}</td>
-        <td>${juego.genero}</td>
-        <td>${juego.plataforma}</td>
-        <td>${juego.anio}</td>
-      `;
-      tabla.appendChild(fila);
-    });
-  })
-  .catch((error) => console.error(error));
+    // Función para mostrar una página específica
+    function showPage(page) {
+      startIndex = (page - 1) * 5;
+      const endIndex = startIndex + 5;
+      const pageRows = rows.slice(startIndex, endIndex);
 
-// Función para convertir datos CSV en un array de objetos
-function parseCSV(data) {
-  const filas = data.split("\n");
-  const columnas = filas[0].split(",");
-  const juegos = [];
+      tabla.innerHTML = ''; // Limpiar la tabla antes de agregar las filas de la página actual
 
-  for (let i = 1; i < filas.length; i++) {
-    const juego = {};
-    const valores = filas[i].split(",");
+      pageRows.forEach(row => {
+        const cols = row.split(',');
+        const tr = document.createElement('tr');
+        cols.forEach(col => {
+          const td = document.createElement('td');
+          td.textContent = col.trim();
+          tr.appendChild(td);
+        });
+        tabla.appendChild(tr);
+      });
 
-    for (let j = 0; j < columnas.length; j++) {
-      juego[columnas[j]] = valores[j];
+      // Actualizar el número de página actual
+      currentPage = page;
+
+      // Actualizar el texto del botón de "Página anterior"
+      const prevBtn = document.querySelector('.prev-page-btn');
+      if (currentPage === 1) {
+        prevBtn.disabled = true;
+      } else {
+        prevBtn.disabled = false;
+      }
+
+      // Actualizar el texto del botón de "Página siguiente"
+      const nextBtn = document.querySelector('.next-page-btn');
+      if (currentPage === totalPages) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+      }
     }
 
-    juegos.push(juego);
-  }
+    // Agregar un botón de "Página anterior"
+    const prevBtn = document.createElement('button');
+    prevBtn.classList.add('prev-page-btn');
+    prevBtn.textContent = 'Página anterior';
+    prevBtn.addEventListener('click', () => {
+      showPage(currentPage - 1);
+    });
+    const tableParent = tabla.parentNode; // Get the parent node of tabla
+    tableParent.insertBefore(prevBtn, tabla);
 
-  return juegos;
-}
+    // Agregar un botón de "Página siguiente"
+    const nextBtn = document.createElement('button');
+    nextBtn.classList.add('next-page-btn');
+    nextBtn.textContent = 'Página siguiente';
+    nextBtn.addEventListener('click', () => {
+      showPage(currentPage + 1);
+    });
+    tableParent.insertBefore(nextBtn, tabla.nextSibling);
+    // Mostrar la primera página al cargar la página
+
+
+    showPage(currentPage);
+  });
