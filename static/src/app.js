@@ -6,14 +6,14 @@ fetch(csv_url)
   .then((data) => {
     const tabla = document.querySelector("#gameTable tbody");
     const rows = data.split("\n").slice(1); // Eliminar encabezados y dividir en filas
-    const totalPages = Math.ceil(rows.length / 5); // Calcular el número total de páginas
+    const totalPages = Math.ceil(rows.length / 10); // Calcular el número total de páginas
     let currentPage = 1; // Página actual
     let startIndex = 0; // Índice de inicio de la página actual
 
     // Función para mostrar una página específica
     function showPage(page) {
-      startIndex = (page - 1) * 5;
-      const endIndex = startIndex + 5;
+      startIndex = (page - 1) * 10;
+      const endIndex = startIndex + 10;
       const pageRows = rows.slice(startIndex, endIndex);
 
       tabla.innerHTML = ""; // Limpiar la tabla antes de agregar las filas de la página actual
@@ -47,6 +47,8 @@ fetch(csv_url)
       } else {
         nextBtn.disabled = false;
       }
+
+      adjustTableSize(); // ajustar el tamaño de la tabla después de mostrar la página
     }
 
     // Agregar un botón de "Página anterior"
@@ -56,7 +58,7 @@ fetch(csv_url)
     prevBtn.addEventListener("click", () => {
       showPage(currentPage - 1);
     });
-    const tableParent = tabla.parentNode; // Get the parent node of tabla
+    const tableParent = tabla.parentNode; // Obtener el nodo padre de tabla
     tableParent.insertBefore(prevBtn, tabla);
 
     // Agregar un botón de "Página siguiente"
@@ -67,7 +69,20 @@ fetch(csv_url)
       showPage(currentPage + 1);
     });
     tableParent.insertBefore(nextBtn, tabla.nextSibling);
-    // Mostrar la primera página al cargar la página
 
+    // Mostrar la primera página al cargar la página
     showPage(currentPage);
   });
+
+function adjustTableSize() {
+  const rows = document.querySelectorAll("#gameTable tbody tr");
+  rows.forEach((row) => {
+    const cells = row.querySelectorAll("td");
+    cells.forEach((cell) => {
+      cell.style.width = "auto";
+    });
+    row.style.height = row.scrollHeight + "px";
+  });
+}
+
+window.addEventListener("load", adjustTableSize);
