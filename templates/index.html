@@ -1,32 +1,188 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Base de Datos de Videojuegos</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <title>Gamespedia</title>
+    <link rel="stylesheet" href="/static/styleS.css" />
+    <script type="text/javascript" src="/static/src/app.js"></script>
     <link rel="icon" href="/static/images/GP Icon logo.png" />
   </head>
   <body>
-    <header class="headerlogo">
-      <img src="/static/images/Gamespedia logo full.png" alt="Gamespedia" />
-    </header>
-    <div class="Table-container">
-      <table id="gameTable">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>Language</th>
-            <th>Release Date</th>
-            <th>Publisher</th>
-            <th>Mature Content</th>
-            <th>Minimum Requirements</th>
-            <th>Recomended Requirements</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="/static/images/Gamespedia logo full.png" alt="Gamespedia" />
+        </div>
+        <ul>
+          <li class="active">
+            <i class="fas fa-home"></i>
+          </li>
+          <li>
+            <i class="fas fa-tv"></i>
+          </li>
+          <li>
+            <i class="fas fa-user-friends"></i>
+          </li>
+          <li></li>
+          <li>
+            <i class="fas fa-shopping-bag"></i>
+          </li>
+        </ul>
+      </nav>
+      <div class="right-main">
+        <div class="main-top">
+          <div class="search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div class="top">
+            <i class="fas fa-bell"
+              ><button onclick="window.location.href='dataBase.html'">
+                DB
+              </button>
+            </i>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-bars" id="hamburger"></i>
+          </div>
+        </div>
+        <div class="main-flex">
+          <main>
+            <header>
+              <div class="tag">New</div>
+              <h1>The Legend of Zelda: Tears of the Kingdom</h1>
+              <div class="purchase">
+                <h2>$69.99</h2>
+                <button>Purchase</button>
+              </div>
+              <div class="spiderman-img">
+                <img
+                  src="/static/images/games/link.png"
+                  alt="TOTK"
+                  draggable="false"
+                />
+              </div>
+            </header>
+            <div class="most-played">
+              <h3>Títulos Recientes</h3>
+              <div class="cards">
+                <div class="games-card">
+                  <div class="game-image-container">
+                    <img
+                      src="/static/images/games/re4.png"
+                      alt="ResidentEvil 4"
+                    />
+                  </div>
 
-    <script type="text/javascript" src="/static/src/app.js"></script>
+                  <h4>Resident Evil 4 Remake</h4>
+                  <p>$59.99</p>
+                </div>
+                <div class="games-card">
+                  <div class="game-image-container">
+                    <img src="/static/images/games/HL.png" alt="cyberpunk" />
+                  </div>
+                  <h4>Hogwarts Legacy</h4>
+                  <p>$50.90</p>
+                </div>
+                <div class="games-card">
+                  <div class="game-image-container">
+                    <img
+                      src="/static/images/games/SS.png"
+                      alt="Hollow Knight: Silksong"
+                    />
+                  </div>
+                  <h4>Hollow Knight: Silksong</h4>
+                  <p>$100.99</p>
+                </div>
+              </div>
+            </div>
+          </main>
+          <aside>
+            <div class="library">
+              <h3>Library</h3>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0747/3829/products/mL2363_1024x1024.jpg?v=1571445542"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Red Dead Redemption</h4>
+                  <p>PS4</p>
+                </div>
+                <i class="fas fa-download"></i>
+              </div>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://www.vgr.com/wp-content/uploads/2020/05/GTA-V-Premium-Edition-Free-Giveaway-Epic-Games-Store.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Gran Theft Auto V</h4>
+                  <p>PS4 & PS5</p>
+                </div>
+                <i class="far fa-check-circle"></i>
+              </div>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://i2.wp.com/technosports.co.in/wp-content/uploads/2020/10/Screenshot-189.png?fit=1920%2C1080&ssl=1"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Fifa 21</h4>
+                  <p>PS4</p>
+                </div>
+                <i class="fas fa-download"></i>
+              </div>
+              <hr />
+              <h3>Social</h3>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Daru</h4>
+                  <p>Playing Resident Evil Village</p>
+                </div>
+                <div class="online"></div>
+              </div>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man4-512.png"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Didi-man</h4>
+                  <p>Offline</p>
+                </div>
+                <div class="offline"></div>
+              </div>
+              <div class="library-card">
+                <div class="game-logo">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/avatar-373-456325.png"
+                    alt=""
+                  />
+                </div>
+                <div class="game-details">
+                  <h4>Hoodini</h4>
+                  <p>Playing The Legend of Zelda: Tears of the Kingdom</p>
+                </div>
+                <div class="online"></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

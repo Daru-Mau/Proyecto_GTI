@@ -12,12 +12,61 @@ body {
 .headerlogo {
   background-image: url("https://www.transparenttextures.com/patterns/diagonal-noise.png");
   padding: 1em;
-  text-align: center;
+  text-align: left;
   width: 98%;
 }
 
 .headerlogo img {
   width: 30%;
+}
+
+.headerlogo {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 10px;
+  position: relative;
+}
+
+.banner-left,
+.banner-right {
+  flex-basis: 20%;
+}
+
+.banner-left {
+  position: relative;
+  left: 0;
+  z-index: 0;
+}
+
+.banner-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.Table-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 #tableContainer {
