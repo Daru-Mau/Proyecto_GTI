@@ -25,6 +25,45 @@ body {
   margin-bottom: 10px;
 }
 
+.store {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  width: auto;
+  justify-content: space-between;
+}
+
+.store button {
+  padding: 1em 2em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: "Urbanist", sans-serif;
+  background-color: #8248f3;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.store button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #8248f3;
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.store button:hover::after {
+  opacity: 1;
+}
+
 .banner {
   display: flex;
   justify-content: center;
